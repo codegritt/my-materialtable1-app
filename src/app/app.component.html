@@ -115,14 +115,18 @@
 </mat-tab-group>
 {{tabRef.selectedIndex}}
 
-<mat-horizontal-stepper>
-  <mat-step label="Shipping address">
+<mat-vertical-stepper>
+  <mat-step label="Shipping address" completed="true">
   </mat-step>
-  <mat-step label="Billing address">
+  <mat-step label="Billing address" completed="false">
     <p>Billing address details</p>
+    <div>
+      <button mat-button matStepperPrevious>Back</button>
+      <button mat-button matStepperNext>Next</button>
+    </div>
   </mat-step>
-  <mat-step label="Place order">
+  <mat-step label="Place order" completed="true">
     <p>Order details</p>
   </mat-step>
 
-</mat-horizontal-stepper>
+</mat-vertical-stepper>
