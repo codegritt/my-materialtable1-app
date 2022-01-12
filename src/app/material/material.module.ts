@@ -4,13 +4,17 @@ import { MatButtonModule } from '@angular/material/button';
 import {MatButtonToggleModule} from '@angular/material/button-toggle';
 import {MatListModule} from '@angular/material/list';
 import {MatIconModule} from '@angular/material/icon';
+import {MatDividerModule} from '@angular/material/divider';
+import {MatGridListModule} from '@angular/material/grid-list';
 
 const MaterialComponents=[
   MatMenuModule,
   MatButtonModule,
   MatButtonToggleModule,
   MatListModule,
-  MatIconModule
+  MatIconModule,
+  MatDividerModule,
+  MatGridListModule
 ];
 
 @NgModule({
