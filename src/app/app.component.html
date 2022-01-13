@@ -191,3 +191,11 @@
   <mat-radio-button value="react" color="accent">React</mat-radio-button>
   <mat-radio-button value="vue" color="warn">Vue</mat-radio-button>
 </mat-radio-group>
+
+<mat-form-field>
+  <input matInput [matDatepicker]="myDatePicker">
+  <mat-datepicker-toggle [for]="myDatePicker" matSuffix>
+  </mat-datepicker-toggle>
+
+  <mat-datepicker #myDatePicker></mat-datepicker>
+</mat-form-field>
