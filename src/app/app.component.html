@@ -203,7 +203,8 @@ matTooltipHideDelay="2000">Hello</button>
 <button mat-button (click)="openSnackbar('Item deleted','Undo')">Delete</button>"
 
 <button mat-raised-button (click)="openDialog()">Open dialog</button>
-
+<br>
+<br>
 <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
 
   <!--- Note that these columns can be defined in any order.
@@ -234,5 +235,5 @@ matTooltipHideDelay="2000">Hello</button>
   </ng-container>
 
   <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  <tr mat-row (click)="logData(row)" *matRowDef="let row; columns: displayedColumns;"></tr>
 </table>
