@@ -12,9 +12,6 @@ import { map,startWith } from 'rxjs/operators';
 export class AppComponent implements OnInit{
   title = 'my-materialtable1-app';
 
-minDate=new Date();
-maxDate=new Date(2019,3,10);
-
 
   selectedValue="string";
   options: string[]=['angular','react','vue'];
@@ -46,5 +43,7 @@ maxDate=new Date(2019,3,10);
 displayFn(subject: { name: any; }){
   return subject? subject.name:undefined;
 }
+minDate=new Date();
+maxDate=new Date(2019,3,10);
 
 }
