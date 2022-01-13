@@ -7,6 +7,8 @@ import { MatDialog } from '@angular/material/dialog';
 import { DialogExampleComponent } from './dialog-example/dialog-example.component';
 import { MatTableDataSource} from '@angular/material/table';
 import { MatSort } from '@angular/material/sort';
+import { MatPaginator } from '@angular/material/paginator';
+
 
 export interface PeriodicElement {
   name: string;
@@ -40,6 +42,8 @@ export class AppComponent implements OnInit {
   dataSource = new MatTableDataSource (ELEMENT_DATA);
   @ViewChild(MatSort)
   sort!: MatSort;
+  @ViewChild(MatPaginator)
+  paginator!: MatPaginator;
 
 
   logData(row: any){
@@ -95,6 +99,7 @@ export class AppComponent implements OnInit {
       map(value => this._filter(value))
     );
     this.dataSource.sort=this.sort
+    this.dataSource.paginator=this.paginator;
   }
 
   private _filter(value: string): string[] {
