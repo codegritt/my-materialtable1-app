@@ -1,11 +1,12 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,ViewChild } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { Observable } from 'rxjs';
 import { map, startWith } from 'rxjs/operators';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { MatDialog } from '@angular/material/dialog';
 import { DialogExampleComponent } from './dialog-example/dialog-example.component';
-import { MatTableDataSource } from '@angular/material/table';
+import { MatTableDataSource} from '@angular/material/table';
+import { MatSort } from '@angular/material/sort';
 
 export interface PeriodicElement {
   name: string;
@@ -37,6 +38,9 @@ export class AppComponent implements OnInit {
 
   displayedColumns: string[] = ['position', 'name', 'weight', 'symbol'];
   dataSource = new MatTableDataSource (ELEMENT_DATA);
+  @ViewChild(MatSort)
+  sort!: MatSort;
+
 
   logData(row: any){
     console.log(row);
@@ -90,6 +94,7 @@ export class AppComponent implements OnInit {
       startWith(''),
       map(value => this._filter(value))
     );
+    this.dataSource.sort=this.sort
   }
 
   private _filter(value: string): string[] {
