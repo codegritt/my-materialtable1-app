@@ -37,6 +37,10 @@ export class AppComponent implements OnInit {
 
   displayedColumns: string[] = ['position', 'name', 'weight', 'symbol'];
   dataSource = ELEMENT_DATA;
+
+  logData(row: any){
+    console.log(row);
+  }
   title = 'my-materialtable1-app';
 
 
