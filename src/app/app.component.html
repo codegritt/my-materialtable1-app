@@ -141,6 +141,7 @@
   <mat-label>Name</mat-label>
   <input matInput required/>
   <mat-hint align="end">Min 5 characters</mat-hint>
+
 </mat-form-field>
 
 <mat-form-field>
@@ -192,10 +193,3 @@
   <mat-radio-button value="vue" color="warn">Vue</mat-radio-button>
 </mat-radio-group>
 
-<mat-form-field>
-  <input matInput [matDatepicker]="myDatePicker" [min]="minDate" [max]="maxDate">
-  <mat-datepicker-toggle [for]="myDatePicker" matSuffix>
-  </mat-datepicker-toggle>
-
-  <mat-datepicker #myDatePicker></mat-datepicker>
-</mat-form-field>
