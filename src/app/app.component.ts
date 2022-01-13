@@ -28,7 +28,11 @@ export class AppComponent implements OnInit {
     });
   }
     openDialog(){
-      this.dialog.open(DialogExampleComponent);
+      let dialogRef = this.dialog.open(DialogExampleComponent,{data:{name: 'gokul'}});
+
+      dialogRef.afterClosed().subscribe(result=>{
+        console.log('Dialog result: ${result}')
+      })
     }
 
   
