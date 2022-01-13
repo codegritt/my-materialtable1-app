@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { Observable} from 'rxjs';
 import { map,startWith } from 'rxjs/operators';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 
 @Component({
@@ -12,6 +13,21 @@ import { map,startWith } from 'rxjs/operators';
 export class AppComponent implements OnInit{
   title = 'my-materialtable1-app';
 
+
+  constructor(private snackBar:MatSnackBar){}
+openSnackbar(message: string,action: string | undefined){
+  let snackBarRef=this.snackBar.open(message,action);
+
+  snackBarRef.afterDismissed().subscribe(()=>{
+    console.log('snackbar dismissed');
+  });
+  snackBarRef.onAction().subscribe(()=>{
+    console.log('snackbar triggered');
+  });
+
+
+}
+  
 
   selectedValue="string";
   options: string[]=['angular','react','vue'];
